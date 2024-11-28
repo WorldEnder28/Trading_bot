@@ -1,0 +1,148 @@
+2024-10-24 20:55:58,737 - trading_system - INFO - Starting trading system...
+2024-10-24 20:55:58,738 - trading_system - INFO - Initializing components...
+2024-10-24 20:55:58,738 - trading_system - ERROR - Error initializing components: 'PortfolioManager' object has no attribute 'initialize'
+2024-10-24 20:55:58,738 - trading_system - ERROR - Error starting system: 'PortfolioManager' object has no attribute 'initialize'
+2024-10-24 20:55:58,738 - trading_system - INFO - Stopping trading system...
+2024-10-24 20:55:58,739 - trading_system - INFO - Trading system stopped
+2024-10-24 21:00:53,115 - trading_system - INFO - Starting trading system...
+2024-10-24 21:00:53,124 - trading_system - INFO - Initializing components...
+2024-10-24 21:00:53,125 - trading_system - INFO - Components initialized successfully
+2024-10-24 21:05:18,044 - trading_system - INFO - Starting trading system...
+2024-10-24 21:05:18,044 - trading_system - INFO - Initializing components...
+2024-10-24 21:05:18,044 - trading_system - INFO - Components initialized successfully
+2024-10-24 21:54:48,781 - trading_system - INFO - Starting trading system...
+2024-10-24 21:54:48,782 - trading_system - INFO - Initializing components...
+2024-10-24 21:54:48,782 - trading_system - INFO - Components initialized successfully
+2024-10-24 21:55:18,783 - trading_system - ERROR - System initialization timed out
+2024-10-24 21:55:18,784 - trading_system - INFO - Stopping trading system...
+2024-10-24 21:55:18,784 - trading_system - INFO - Trading system stopped
+2024-10-24 22:01:38,334 - trading_system - INFO - Starting trading system...
+2024-10-24 22:01:38,334 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:01:38,334 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:01:38,334 - trading_system - INFO - Initializing market data connection...
+2024-10-24 22:01:38,335 - trading_system - INFO - Market data connection established
+2024-10-24 22:01:38,335 - trading_system - INFO - Setting up event subscriptions...
+2024-10-24 22:01:38,335 - trading_system - INFO - Event subscriptions completed
+2024-10-24 22:01:38,335 - trading_system - INFO - Initializing portfolio...
+2024-10-24 22:01:38,335 - trading_system - INFO - Portfolio initialized
+2024-10-24 22:01:38,335 - trading_system - INFO - Testing market data access...
+2024-10-24 22:02:38,350 - trading_system - ERROR - System initialization timed out: 
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 71, in start
+    await self._initialize_components()
+  File "C:\Users\arjun\Desktop\trading\run.py", line 166, in _initialize_components
+    test_data = await market_data.get_stock_data(test_symbol)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\Desktop\trading\core\market_data.py", line 62, in get_stock_data
+    data = await self._fetch_nse_data(symbol, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\Desktop\trading\core\market_data.py", line 120, in _fetch_nse_data
+    async with session.get(url, headers=headers) as response:
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\aiohttp\client.py", line 1359, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\aiohttp\client.py", line 690, in _request
+    await resp.start(conn)
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1058, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\aiohttp\streams.py", line 643, in read
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 70, in start
+    async with async_timeout.timeout(60):  # Increased timeout
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\async_timeout\__init__.py", line 141, in __aexit__
+    self._do_exit(exc_type)
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\async_timeout\__init__.py", line 228, in _do_exit
+    raise asyncio.TimeoutError
+TimeoutError
+
+2024-10-24 22:02:38,354 - trading_system - INFO - Cleaning up resources...
+2024-10-24 22:02:38,354 - trading_system - INFO - Cleanup completed
+2024-10-24 22:02:38,354 - trading_system - INFO - Stopping trading system...
+2024-10-24 22:02:38,354 - trading_system - INFO - Trading system stopped
+2024-10-24 22:07:01,124 - trading_system - INFO - Starting trading system...
+2024-10-24 22:07:01,125 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:07:01,125 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:07:01,125 - trading_system - INFO - Initializing market data connection...
+2024-10-24 22:07:01,125 - trading_system - INFO - Testing market data access using OpenBB...
+2024-10-24 22:07:01,126 - trading_system - ERROR - Error testing market data: 'App' object has no attribute 'stocks'
+2024-10-24 22:07:01,140 - trading_system - ERROR - Error initializing components: 'App' object has no attribute 'stocks'
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 146, in _initialize_components
+    test_data = await asyncio.get_event_loop().run_in_executor(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\Desktop\trading\run.py", line 148, in <lambda>
+    lambda: obb.stocks.historical(test_symbol)
+            ^^^^^^^^^^
+AttributeError: 'App' object has no attribute 'stocks'
+
+2024-10-24 22:07:01,142 - trading_system - ERROR - Error starting system: 'App' object has no attribute 'stocks'
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 71, in start
+    await self._initialize_components()
+  File "C:\Users\arjun\Desktop\trading\run.py", line 146, in _initialize_components
+    test_data = await asyncio.get_event_loop().run_in_executor(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\Desktop\trading\run.py", line 148, in <lambda>
+    lambda: obb.stocks.historical(test_symbol)
+            ^^^^^^^^^^
+AttributeError: 'App' object has no attribute 'stocks'
+
+2024-10-24 22:07:01,143 - trading_system - INFO - Cleaning up resources...
+2024-10-24 22:07:01,143 - trading_system - INFO - Cleanup completed
+2024-10-24 22:07:01,143 - trading_system - INFO - Stopping trading system...
+2024-10-24 22:07:01,144 - trading_system - INFO - Trading system stopped
+2024-10-24 22:10:11,530 - trading_system - INFO - Starting trading system...
+2024-10-24 22:10:11,530 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:10:11,530 - trading_system - INFO - Starting component initialization...
+2024-10-24 22:10:11,530 - trading_system - INFO - Initializing market data connection...
+2024-10-24 22:10:11,530 - trading_system - INFO - Testing market data access using yfinance...
+2024-10-24 22:10:14,481 - trading_system - INFO - Yfinance market data test successful
+2024-10-24 22:10:14,481 - trading_system - INFO - Setting up event subscriptions...
+2024-10-24 22:10:14,481 - trading_system - INFO - Event subscriptions completed
+2024-10-24 22:10:14,483 - trading_system - INFO - Initializing portfolio...
+2024-10-24 22:10:14,483 - trading_system - INFO - Portfolio initialized
+2024-10-24 22:10:14,484 - trading_system - INFO - All components initialized successfully
+2024-10-24 22:10:14,484 - trading_system - INFO - Component initialization completed
+2024-10-24 22:10:14,484 - trading_system - INFO - Starting event manager...
+2024-10-24 22:11:14,497 - trading_system - ERROR - Error starting event manager: 
+2024-10-24 22:11:14,519 - trading_system - ERROR - System initialization timed out: 
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 78, in start
+    await event_manager.start()
+  File "C:\Users\arjun\Desktop\trading\core\events.py", line 72, in start
+    event = await self.queue.get()
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\arjun\AppData\Local\Programs\Python\Python312\Lib\asyncio\queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\arjun\Desktop\trading\run.py", line 77, in start
+    async with async_timeout.timeout(60):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\async_timeout\__init__.py", line 141, in __aexit__
+    self._do_exit(exc_type)
+  File "c:\Users\arjun\Desktop\ak\.venv\Lib\site-packages\async_timeout\__init__.py", line 228, in _do_exit
+    raise asyncio.TimeoutError
+TimeoutError
+
+2024-10-24 22:11:14,523 - trading_system - INFO - Cleaning up resources...
+2024-10-24 22:11:14,524 - trading_system - INFO - Cleanup completed
+2024-10-24 22:11:14,524 - trading_system - INFO - Stopping trading system...
+2024-10-24 22:11:14,524 - trading_system - INFO - Trading system stopped
